@@ -20,9 +20,13 @@ Chaque activité est disponible dans un sous-dossier :
 
 ### Scripts d'exécution (disponibles au format Powershell .ps1 ou Bash .sh au choix)
 
+*Note : sur environnement Linux, il est nécessaire de rendre exécutables les scripts avant toute opération :* `chmod +x *.sh`
+
 `1_Terraform` : Déploiement de l'infrastructure sur le compte AWS configuré.
 
 `2_TestLambda` : Test de la fonction Lambda sur l'infrastructure.
+
+*Note : pour le script suivant, sur environnement Linux, il peut être nécessaire d'ajouter les droits docker à l'utilisateur en cours :* `sudo usermod -aG docker $UTILISATEUR_ACTUEL`*. Une reconnexion de l'utilisateur est nécessaire pour appliquer ce changement.*
 
 `3_SpringBoot` : Test local puis déploiement de l'application Spring Boot sur l'infrastructure.
 
