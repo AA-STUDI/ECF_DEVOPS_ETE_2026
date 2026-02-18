@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cd AT3_Supervision
+chmod +x deploy.sh
 ./deploy.sh
 echo "NOTE : les pods déployés avant les outils de supervision doivent être redémarrés pour être visibles par ceux-ci."
 echo "Exemple pour l'application Spring Boot de l'activité type 2 :"
