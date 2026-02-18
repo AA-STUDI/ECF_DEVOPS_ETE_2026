@@ -1,0 +1,11 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Lambda
+*.zip
+lambda_function/node_modules/
+
+# Test
+response.json

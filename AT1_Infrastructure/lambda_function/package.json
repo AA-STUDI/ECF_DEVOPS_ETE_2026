@@ -1,0 +1,7 @@
+{
+  "name": "infoline-login-lambda",
+  "version": "1.0.0",
+  "description": "Fonction Lambda pour l'authentification",
+  "main": "index.js",
+  "author": "AA-STUDI"
+}
