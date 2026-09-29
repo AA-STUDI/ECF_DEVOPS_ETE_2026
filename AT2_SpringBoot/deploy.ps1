@@ -6,6 +6,10 @@ $CLUSTER_NAME = "infoline-eks-cluster"
 
 Write-Host "Deploiement en cours..."
 
+# Compilation locale du .jar
+.\mvnw.cmd clean package -DskipTests -B | Out-Null
+if ($LASTEXITCODE -ne 0) { Write-Host "Erreur lors de la compilation" ; exit 1 }
+
 # Build
 docker build -t ${IMAGE_NAME}:${IMAGE_VERSION} . | Out-Null
 if ($LASTEXITCODE -ne 0) { Write-Host "Erreur lors du build" ; exit 1 }

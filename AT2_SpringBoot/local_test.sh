@@ -5,6 +5,10 @@ EXPECTED="Hello World !"
 PORT=8081
 TIMEOUT=30
 
+echo "Compilation en cours..."
+sh ./mvnw clean package -DskipTests -B > /dev/null 2>&1
+if [ $? -ne 0 ]; then echo "Erreur lors de la compilation" ; exit 1 ; fi
+
 echo "Build en cours..."
 docker build -t $IMAGE . > /dev/null 2>&1
 if [ $? -ne 0 ]; then echo "Erreur lors du build" ; exit 1 ; fi

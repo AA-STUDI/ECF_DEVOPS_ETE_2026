@@ -3,6 +3,10 @@ $EXPECTED = "Hello World !"
 $PORT = 8081
 $TIMEOUT = 30
 
+Write-Host "Compilation en cours..."
+.\mvnw.cmd clean package -DskipTests -B | Out-Null
+if ($LASTEXITCODE -ne 0) { Write-Host "Erreur lors de la compilation" ; exit 1 }
+
 Write-Host "Build en cours..."
 docker build -t $IMAGE . | Out-Null
 if ($LASTEXITCODE -ne 0) { Write-Host "Erreur lors du build" ; exit 1 }
